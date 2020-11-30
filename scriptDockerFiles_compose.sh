@@ -9,9 +9,6 @@ docker build -t sllopez/server_p1 .
 cd ../spark_docker
 docker build -t sllopez/spark_p1 .
 
-# cd ../mongo_docker
-# docker build -t sllopez/mongo_p1 .
-
 cd ..
 docker-compose up
 
