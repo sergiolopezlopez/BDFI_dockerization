@@ -3,7 +3,8 @@
 
 # Despliegue en local
 
-En esta sección se va a indicar como desplegar el código en local. El código se puede encontrar en el siguiente enlace: https://github.com/ging/practica_big_data_2019
+En esta sección se va a indicar como desplegar el código en local. El código se puede encontrar en el siguiente enlace: https://github.com/ging/practica_big_data_2019. Posteriormente se detallarán los pasos para el despliegue con Docker.
+
 ## Versiones utilizadas
 Las versiones utilizadas para la ejecución en local son:
 Kafka 2.12-2.3.0
