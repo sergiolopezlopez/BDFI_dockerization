@@ -81,18 +81,23 @@ Y en otra nueva, para crear el topic:
 docker exec -it kafka_p1 /opt/kafka_2.12-2.3.0/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic flight_delay_classification_request
 
 ```
-En la misma consola, una vez terminado el paso anterior, ejecutar mongo:
+Depe aparecer por pantalla que se ha creado el topic "flight_delay_classification_request". 
+
+En la misma consola, se debe ejecutar mongo:
 ```
 docker exec -it mongo mongoimport -d agile_data_science -c origin_dest_distances --file /practica_big_data_2019/data/origin_dest_distances.jsonl
 
 ```
+
 Ahora se debe proceder a ejecutar spark-submit con el comando:
 
 ```
 docker exec -it spark_p1 /opt/spark-2.4.0-bin-hadoop2.7/bin/spark-submit --class es.upm.dit.ging.predictor.MakePrediction --packages org.mongodb.spark:mongo-spark-connector_2.11:2.3.2,org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.0 /practica/flight_prediction/target/scala-2.11/flight_prediction_2.11-0.1.jar
 
 ```
-Por último, desplegaremos la aplicación web gracias a flask con el comando:
+Este comando, puede tardar unos minutos en desplegar la conexión con kafka y mongo. Una vez aparezca en salida diferentes logs de INFO Fetcher:583 es que la conexión está ya establecida.
+
+Por último, en una nueva pestaña, desplegaremos la aplicación web gracias a flask con el comando:
 
 ```
 docker exec -it server_p1 python3 /resources/web/predict_flask.py
