@@ -68,7 +68,7 @@ Este script tarda varios minutos en ejecutarse.
 
 Cuando se hayan desplegado todos los dockers, debemos ejecutar algunos comandos en cada uno de ellos (como en el despliegue local). Sin embargo para no tener que acceder directamente a sus consolas, usaremos el comando  ```docker exec``` para ejecutarlos desde nuestro terminal.
 
-En una nueva pestaña del terminal ejecuta el siguiente comandon para empezar zookeeper:
+En una nueva pestaña del terminal ejecuta el siguiente comando para empezar zookeeper:
 ```
 docker exec -it kafka_p1 /opt/kafka_2.12-2.3.0/bin/zookeeper-server-start.sh /opt/kafka_2.12-2.3.0/config/zookeeper.properties
 
