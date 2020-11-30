@@ -63,6 +63,8 @@ Una vez instalado, se procederá a ejecutar el script con sh llamado scriptDocke
 ```
 sh scriptDockerFiles_compose.sh
 ```
+Este script tarda varios minutos en ejecutarse. 
+
 
 Cuando se hayan desplegado todos los dockers, debemos ejecutar algunos comandos en cada uno de ellos (como en el despliegue local). Sin embargo para no tener que acceder directamente a sus consolas, usaremos el comando  ```docker exec``` para ejecutarlos desde nuestro terminal.
 
